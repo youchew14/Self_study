@@ -1,3 +1,7 @@
+// 고정 비용 : A
+// 가변 비용 : B
+// 소비자 가격 : C
+
 string[] user = Console.ReadLine().Split();
 long a = int.Parse(user[0]);
 long b = int.Parse(user[1]);
