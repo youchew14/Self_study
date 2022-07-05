@@ -8,15 +8,13 @@ for (int i = 0; i < 5; i++)
 }
 while(true)
 {
-    //Console.WriteLine("day : {0}", day);
     num[1] -= num[3];
     num[2] -= num[4];
-    //Console.WriteLine("{0} {1}", num[1], num[2]);
+    
     if (num[1] <= 0 && num[2] <= 0)
     {
         break;
     }
     day++;
 }
-//Console.WriteLine("day : {0}", day);
 Console.WriteLine(num[0] - day);
