@@ -1,30 +1,30 @@
-int n = int.Parse(Console.ReadLine());
-string result = "";
-for (int i = 0; i < n; i++)
+int user = int.Parse(Console.ReadLine());
+string[] p = new string[user];
+
+for (int i = 0; i < user; i++)
 {
-    string[] input = Console.ReadLine().Split();
-    int number = int.Parse(input[0]);
-    int L1 = int.Parse(input[1]);
-    int L2 = int.Parse(input[2]);
-    int L3 = int.Parse(input[3]);
-    int totalScore = L1 + L2 + L3;
-    string state;
-    if (totalScore >= 55)
+    string[] num = Console.ReadLine().Split(' ');
+    int[] sco = Array.ConvertAll(num, int.Parse);
+
+    int sum = sco[1] + sco[2] + sco[3];
+    double a = 35 * 0.3;
+    double b = 25 * 0.3;
+    double c = 40 * 0.3;
+
+    if (a <= (double)sco[1] && b <= (double)sco[2] && c <= (double)sco[3])
     {
-        if ((L1 >= 35 * 0.3) && (L2 >= 25 * 0.3) && (L3 >= 40 * 0.3))
+        if (55 <= sum)
         {
-            state = "PASS";
+            p[i] = num[0].ToString() + " " + sum.ToString() + " PASS";
         }
         else
         {
-            state = "FAIL";
+            p[i] = num[0].ToString() + " " + sum.ToString() + " FAIL";
         }
     }
     else
     {
-        state = "FAIL";
+        p[i] = num[0].ToString() + " " + sum.ToString() + " FAIL";
     }
-    result += number + " " + totalScore + " " + state + "\n";
 }
-
-Console.WriteLine(result);
+Console.WriteLine(string.Join("\n", p));
