@@ -1,8 +1,6 @@
 for (int k = 0; k < 3; k++)
 {
     string[] s = Console.ReadLine().Split();
-    if (s == null || s.Length >= 5) break;
-
     int[] n = Array.ConvertAll(s, int.Parse);
 
     int count = 0;
